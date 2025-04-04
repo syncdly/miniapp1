@@ -28,7 +28,7 @@ export default function App() {
 
   const handleOpen = async (channelId) => {
     try {
-      const res = await fetch(`https://ium.pro/stream_api/channel-detail.json?id=${channelId}`);
+      const res = await fetch(`https://ium.pro/stream_api/channel-detail.php?id=${channelId}`);
       const data = await res.json();
       setSelectedStream(data.stream);
       setOpen(true);
