@@ -8,7 +8,7 @@ export default function App() {
   const videoRef = useRef(null);
 
   useEffect(() => {
-    fetch("https://ium.pro/stream_api/channels.json")
+    fetch("https://ium.pro/stream_api/channels.php")
       .then((res) => res.json())
       .then((data) => setChannels(data))
       .catch((err) => console.error("Kanal verisi alınamadı:", err));
