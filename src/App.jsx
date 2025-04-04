@@ -8,7 +8,7 @@ export default function App() {
   const videoRef = useRef(null);
 
   useEffect(() => {
-    fetch("https://mocki.io/v1/6f8f0f84-9c77-4b30-8e99-5a6be7e2b7d1")
+    fetch("https://ium.pro/stream_api/channels.json")
       .then((res) => res.json())
       .then((data) => setChannels(data))
       .catch((err) => console.error("Kanal verisi alınamadı:", err));
@@ -28,7 +28,7 @@ export default function App() {
 
   const handleOpen = async (channelId) => {
     try {
-      const res = await fetch(`https://mocki.io/v1/7fa98063-0f3b-4bcb-94d5-2dc7c6db1262?id=${channelId}`);
+      const res = await fetch(`https://ium.pro/stream_api/channel-detail.json?id=${channelId}`);
       const data = await res.json();
       setSelectedStream(data.stream);
       setOpen(true);
